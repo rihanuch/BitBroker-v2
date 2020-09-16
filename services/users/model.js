@@ -22,7 +22,15 @@ const UsersSchema = new Schema({
 		type: Number,
 		required: true,
 		default: 1
-	}
+    },
+    transactions: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Transactions'
+    }],
+    positions: [{
+        type: mongoose.Schema.Types.ObjectId,
+		ref: 'Positions',
+    }]
 });
 
 // https://stackoverflow.com/a/14595363

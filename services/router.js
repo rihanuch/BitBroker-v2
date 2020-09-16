@@ -7,5 +7,6 @@ router.use(require('./currencies/router'));
 router.use(require('./markets/router'));
 router.use(require('./positions/router'));
 router.use(require('./transactions/router'));
+router.use(require('./bot/router'));
 
 module.exports = router;

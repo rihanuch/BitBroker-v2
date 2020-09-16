@@ -1,14 +1,13 @@
-const { deleteAll } = require('./helpers');
 const helpers = require('./helpers');
 
 module.exports = {
 	async getAll(req, res) {
 		try {
-      const users = await helpers.getAll({});
+      const currencies = await helpers.getAll({});
 
       return res.send({
         status: 'success',
-        body: users && users.length ? users : []
+        body: currencies && currencies.length ? currencies : []
       });
     } catch (error) {
       return res.status(400).send({
@@ -23,19 +22,6 @@ module.exports = {
       return res.send({
         status: 'success'
       });
-    } catch (error) {
-      console.log(error)
-      return res.status(400).send({
-        status: 'failure'
-      });
-    }
-  },
-  async deleteAll(req, res) {
-    try {
-      await helpers.deleteAll({})
-      return res.send({
-        status: 'success'
-      })
     } catch (error) {
       return res.status(400).send({
         status: 'failure'

@@ -7,7 +7,10 @@ module.exports = {
   async getAll() {
     return await Users.find({});
   },
-  async addNew({ name }) {
-    return await new Users({ name }).save();
+  async addNew({ telegramId, name, password }) {
+    return await new Users({ telegramId, name, password }).save();
+  },
+  async deleteAll() {
+    return await Users.deleteMany({})
   }
 };

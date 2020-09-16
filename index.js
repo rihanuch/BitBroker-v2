@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const port = process.env.PORT || 2525;
 const dbRetryTime = process.env.db_retry_time || 2000;
 

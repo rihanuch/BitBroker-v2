@@ -1,3 +1,4 @@
+const { deleteAll } = require('./helpers');
 const helpers = require('./helpers');
 
 module.exports = {
@@ -22,6 +23,19 @@ module.exports = {
       return res.send({
         status: 'success'
       });
+    } catch (error) {
+      console.log(error)
+      return res.status(400).send({
+        status: 'failure'
+      });
+    }
+  },
+  async deleteAll(req, res) {
+    try {
+      await helpers.deleteAll({})
+      return res.send({
+        status: 'success'
+      })
     } catch (error) {
       return res.status(400).send({
         status: 'failure'

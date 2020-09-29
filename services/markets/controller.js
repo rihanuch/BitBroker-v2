@@ -28,6 +28,18 @@ module.exports = {
       });
     }
   },
+  async updateAggregate(req, res) {
+    try {
+        await helpers.updateAggregate(req.body);
+        return res.send({
+          status: 'success'
+        })
+    } catch (error) {
+      return res.status(400).send({
+        status: 'failure'
+      });
+    }
+  },
   async deleteAll(req, res) {
     try {
       await helpers.deleteAll({})

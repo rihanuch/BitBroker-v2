@@ -1,4 +1,3 @@
-const { deleteAll } = require('./helpers');
 const helpers = require('./helpers');
 
 module.exports = {
